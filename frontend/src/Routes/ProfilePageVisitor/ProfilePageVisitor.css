@@ -1,0 +1,1181 @@
+/* Base styles */
+.profile-visitor-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  font-size: 16px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Profile container */
+.profile-visitor-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #170e4b, #2a34ba);
+  color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Profile header */
+.profile-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.settings-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.settings-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.settings-popup {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 16rem;
+  padding: 1rem;
+  color: black;
+  z-index: 50;
+  animation: fadeIn 0.3s ease-in-out;
+  transform-origin: top right;
+}
+
+.settings-popup.closing {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.settings-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.settings-popup-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.05rem;
+}
+
+.settings-option:hover {
+  background-color: rgba(42, 52, 186, 0.1);
+  color: #2a34ba;
+}
+
+/* Profile logo */
+.profile-logo {
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove hover effect from profile logo */
+.profile-logo::after {
+  display: none;
+}
+
+/* Fix profile image fitting */
+.profile-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Profile info */
+.profile-info {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.profile-name h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.edit-button {
+  margin-left: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.edit-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Tabs */
+.tabs-container {
+  width: 100%;
+  margin-top: 45px;
+  position: relative;
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Make active tab white */
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+}
+
+/* Add hover effect to tabs */
+.tab:not(.active):hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px 8px 0 0;
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Tab content */
+.tab-content {
+  background-color: #e6e6e6;
+  color: black;
+  min-height: calc(100vh - 14rem);
+  padding-bottom: 4rem;
+  width: 100%;
+}
+
+/* About tab */
+.about-content {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Add margin at the top of the description */
+.section h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.section:first-child h2 {
+  margin-top: 0.5rem;
+}
+
+/* Contact info section */
+.section hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.55);
+  opacity: 0.55;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  color: #555;
+  font-size: 1.15rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.icon {
+  color: #666;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #2a34ba;
+}
+
+/* Posts tab */
+.post-card {
+  display: flex;
+  background: linear-gradient(to bottom right, #170e4b, #2a34ba);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 360px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-card-left {
+  width: 33.333%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-card-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.post-card-left:hover::after {
+  opacity: 1;
+}
+
+.post-card-left:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.post-card-image {
+  padding: 0; /* Removed padding to allow image to fill */
+  height: 100%;
+}
+
+.post-image,
+.post-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.post-card-right {
+  width: 66.667%;
+  padding: 2.2rem 2rem 2rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  background: linear-gradient(to bottom right, #170e4b, #2a34ba);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-header h3 {
+  font-size: 2rem; /* Increased from 1.8rem */
+  font-weight: bold;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.author-badge {
+  background-color: white;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-badge span {
+  color: #170e4b;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.post-details {
+  margin-top: 1.5rem; /* Increased from 1rem */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Increased from 0.5rem */
+  flex: 1;
+}
+
+.post-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+}
+
+/* Remove the post-footer class styling since we're using view-event-corner */
+.post-footer {
+  display: none;
+}
+
+/* Add the view-event-corner style from ProfilePage.css */
+.view-event-corner {
+  position: absolute;
+  bottom: 10px;
+  right: 24px;
+  background: transparent !important;
+  color: #fff !important;
+  font-weight: 500;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: none !important;
+}
+
+.view-event-corner:hover {
+  background: transparent !important;
+  color: #a89cf3 !important;
+  box-shadow: none !important;
+  transform: translateY(-2px);
+}
+
+/* Add the post-footer-spacer style */
+.post-footer-spacer {
+  flex: 1;
+}
+
+/* Improve hover effect for "View Event" link */
+.view-event {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.view-event:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Events tab */
+.events-content {
+  padding: 1.5rem 2rem;
+}
+
+/* Update the events grid to remove status column */
+.events-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  background-color: white; /* Changed from #e0e0e0 to white */
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.event-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.org-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.org-badge {
+  background: linear-gradient(to bottom right, #170e4b, #2a34ba);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.org-badge span {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.event-cell {
+  font-size: 1rem;
+}
+
+/* Enhance hover effect for cancel button */
+.cancel-button {
+  background-color: #fad1d1;
+  color: #e53e3e;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #f56565;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+.status-gray {
+  background-color: #a0aec0;
+}
+
+.status-red {
+  background-color: #e53e3e;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+.modal-overlay.closing {
+  animation: fadeOutOverlay 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeOutOverlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 28rem;
+  padding: 1rem;
+  color: black;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.modal.closing {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.modal-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Improve input focus animation */
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2a34ba;
+  box-shadow: 0 0 0 3px rgba(42, 52, 186, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Add styles for password visibility toggle */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+  background-color: rgba(42, 52, 186, 0.1);
+  color: #2a34ba;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Enhance save button hover effect */
+.save-button {
+  background: linear-gradient(to right, #170e4b, #2a34ba);
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.save-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(42, 52, 186, 0.3);
+  background: linear-gradient(to right, #2a34ba, #4a54da); /* Lighter gradient on hover */
+}
+
+.save-button:active {
+  transform: translateY(-1px);
+}
+
+/* Add spacing between event containers in posts tab */
+.posts-content {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Add styles for the profile image change modal */
+/* Enhance the image upload UI */
+.image-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.current-image-preview {
+  text-align: center;
+}
+
+.profile-preview-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0.5rem auto;
+  display: block;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+  width: 100%;
+  text-align: center;
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #6b46c1, #9f7aea); /* Purple gradient instead of blue */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  max-width: 200px;
+}
+
+.upload-button:hover {
+  background: linear-gradient(to right, #805ad5, #b794f4); /* Lighter purple on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(107, 70, 193, 0.3);
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.upload-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.75rem;
+}
+
+/* Style the file input */
+input[type="file"] {
+  padding: 0.5rem;
+  background-color: #f8f8f8;
+  border-radius: 0.375rem;
+  border: 1px dashed #ccc;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: #f0f0f0;
+}
+
+/* Post cards container spacing */
+.posts-content {
+  padding: 1.5rem 2rem;
+}
+
+.post-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  /* Post-card */
+  .post-card {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .post-card-left {
+    width: 100%;
+    height: 220px; /* Increased from 200px */
+  }
+
+  /* Profile header */
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+
+  .profile-name {
+    justify-content: center;
+  }
+
+  .settings-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  /* Tabs */
+  .tabs {
+    justify-content: center;
+    padding-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Posts */
+
+  .post-card-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .post-footer {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  /* Events */
+  .events-header {
+    display: none;
+  }
+
+  .event-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .event-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+  }
+
+  .event-cell:before {
+    content: attr(data-label);
+    font-weight: 600;
+  }
+
+  .org-info {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-logo-visitor {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .profile-name h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal {
+    max-width: 90%;
+    padding: 0.75rem;
+  }
+}
+
+/* Improve cancel button in popups */
+.modal .cancel-button {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.modal .cancel-button:hover {
+  background-color: #e0e0e0;
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for full image modal */
+.image-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+.image-modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.image-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Image cropper styles */
+.image-cropper-container {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.image-cropper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 2px dashed #ccc;
+  background-color: #f8f8f8;
+}
+
+.image-to-crop {
+  position: absolute;
+  cursor: move;
+  max-width: none;
+}
+
+.crop-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.crop-control {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.crop-control:hover {
+  background-color: #e0e0e0;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.zoom-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.zoom-slider {
+  width: 200px;
+}
+
+/* Visitor profile logo - no hover effect or cursor change */
+/* Visitor view specific styles */
+.visitor-view .profile-header {
+  padding-right: 2.5rem; /* Reduced padding since there's no settings button */
+}
+
+/* Adjust tab container for only two tabs */
+.visitor-view .tabs {
+  justify-content: flex-start;
+}
+
+/* Make sure the visitor view has proper spacing */
+.visitor-view .profile-name {
+  margin-bottom: 0.75rem;
+}
+
+/* Ensure the visitor view has the same styling for posts */
+.visitor-view .post-card-left {
+  cursor: pointer; /* Keep the cursor pointer for image click */
+}
+
+/* Responsive adjustments for visitor view */
+@media (max-width: 768px) {
+  .visitor-view .profile-header {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-logo-visitor {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .profile-name h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+}

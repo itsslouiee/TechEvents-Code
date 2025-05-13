@@ -1,0 +1,158 @@
+export const events = [
+    {
+      id: 1,
+      title: "CodeCraft",
+      deadline: "13 OCT",
+      timeline: "Oct 20 - Oct 22",
+      location: "ESTIN, Bejaia",
+      prize: "150,000 DZD",
+      image: "/images/placeholder.png",
+      logo: "/images/byte.png",
+      category: "Coding Competitions",
+    },
+    {
+      id: 2,
+      title: "TechSummit",
+      deadline: "20 OCT",
+      timeline: "Nov 5 - Nov 7",
+      location: "Palais des Congrès, Algiers",
+      prize: "200,000 DZD",
+      image: "/images/codecompet.png",
+      category: "Coding Competitions",
+    },
+    {
+      id: 3,
+      title: "DataCon",
+      deadline: "25 OCT",
+      timeline: "Nov 15 - Nov 16",
+      location: "University of Oran",
+      prize: "120,000 DZD",
+      imageUrl: "/images/codecompet.png",
+      logoUrl: "/images/byte.png",
+      category: "Coding Competitions",
+    },
+    {
+      id: 4,
+      title: "DevFest",
+      deadline: "30 OCT",
+      timeline: "Nov 25 - Nov 26",
+      location: "Constantine Convention Center",
+      prize: "180,000 DZD",
+      imageUrl: "/images/codecompet.png",
+      logoUrl: "/images/byte.png",
+      category: "Coding Competitions",
+    },
+    {
+      id: 5,
+      title: "AIConnect",
+      deadline: "5 NOV",
+      timeline: "Dec 10 - Dec 12",
+      location: "USTHB, Algiers",
+      prize: "250,000 DZD",
+      imageUrl: "/images/codecompet.png",
+      logoUrl: "/images/byte.png",
+      category: "Coding Competitions",
+    },
+    {
+      id: 6,
+      title: "WebDev Summit",
+      deadline: "15 NOV",
+      timeline: "Dec 20 - Dec 22",
+      location: "Annaba Tech Hub",
+      prize: "170,000 DZD",
+      imageUrl: "/images/codecompet.png",
+      logoUrl: "/images/byte.png",
+      category: "Coding Competitions",
+    },
+  ]
+  
+  export const categories = [
+    {
+      id: 1,
+      title: "Hackathons",
+      description: "Intense coding competitions solving real-world problems collaboratively.",
+      imageUrl: "/images/hackathon.png",
+      link: "/categories/hackathons",
+    },
+    {
+      id: 2,
+      title: "Datathons",
+      description: "Competitive data-driven events solving challenges with analytics.",
+      imageUrl: "/images/datathon.png",
+      link: "/categories/datathons",
+    },
+    {
+      id: 3,
+      title: "CTFs",
+      description: "Cybersecurity competitions testing hacking, cryptography, and problem-solving.",
+      imageUrl: "/images/ctf.png",
+      link: "/categories/ctfs",
+    },
+    {
+      id: 4,
+      title: "Bootcamps",
+      description: "Intensive training programs building skills through hands-on learning.",
+      imageUrl: "/images/bootcamp.png",
+      link: "/categories/bootcamps",
+    },
+    {
+      id: 5,
+      title: "Conferences",
+      description: "Join industry leaders and tech enthusiasts at the most inspiring conferences.",
+      imageUrl: "/images/conference.png",
+      link: "/categories/conferences",
+    },
+    {
+      id: 6,
+      title: "Coding Competitions",
+      description: "Put your skills to the test and compete with the best in coding challenges",
+      imageUrl: "/images/codecompet.png",
+      link: "/categories/coding-competition"
+    },
+    {
+      id: 7,
+      title: "Startup & Innovation",
+      description: "Discover startups and the latest innovations shaping the future of technology",
+      imageUrl: "/images/startup.png",
+      link: "/categories/startup-innovation"
+    }
+  ]
+  
+  export const organizers = [
+    {
+      id: 1,
+      name: "ByteCraft",
+      logoUrl: "/images/byte.png",
+      eventCount: 12,
+      link: "/organizers/bytecraft",
+    },
+    {
+      id: 2,
+      name: "SOIA Algiers",
+      logoUrl: "/images/byte.png",
+      eventCount: 6,
+      link: "/organizers/soia-algiers",
+    },
+    {
+      id: 3,
+      name: "GDSC USTHB",
+      logoUrl: "/images/byte.png",
+      eventCount: 6,
+      link: "/organizers/gdsc-usthb",
+    },
+    {
+      id: 4,
+      name: "ESTIN",
+      logoUrl: "/images/byte.png",
+      eventCount: 6,
+      link: "/organizers/estin",
+    },
+    {
+      id: 5,
+      name: "Nexus",
+      logoUrl: "/images/byte.png",
+      eventCount: 6,
+      link: "/organizers/nexus",
+    },
+  ]
+  
